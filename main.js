@@ -16,7 +16,7 @@ $(document).ready(function() {
                         Транспортная компания: ${data["transportCompany"]}	
                     </div>
                     <div class="col-md-4">
-                        Время доставки, дней: ${data["period"]}		
+                        Дата доставки: ${data["date"]}		
                     </div>
                     <div class="col-md-4">
                         Стоимость: ${data["price"]}	руб.	

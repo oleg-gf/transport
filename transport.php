@@ -22,7 +22,7 @@ class Transport{
 
     }
 
-    public function getPackage($parcel)
+    public function getFastPackage($parcel)
     {
         //подсчёт доставки
         $this->distance = $this->getDistance($parcel->sourceKladr, $parcel->targetKladr);
@@ -31,6 +31,7 @@ class Transport{
         $result_array = array();
         $result_array['price'] = round($this->pricePerKilometer * $this->distance * $weightCoeff);
         $result_array['period'] = round($this->distance / $this->speed);
+        $result_array['date'] = date('d-m-Y', (time() + ($result_array['period'] * 24 * 60 * 60)));
         $result_array['error'] = "ok";
 
         return $result_array;
