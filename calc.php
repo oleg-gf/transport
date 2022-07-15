@@ -1,9 +1,14 @@
 <?php
-session_start();
 
-require_once($_SERVER['DOCUMENT_ROOT'] . "/errors.php");
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/parcel.php");
-require_once($_SERVER['DOCUMENT_ROOT'] . "/transport.php");
+namespace transport;
+
+use Parcel;
+use Transport;
+
+session_start();
+spl_autoload_register();
+
+
 
 foreach ($_POST as &$value) {
     $value = trim(htmlspecialchars($value));
